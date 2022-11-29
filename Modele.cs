@@ -20,6 +20,8 @@ namespace LaboFinal_A22
 {
     public class Modele
     {
+
+
         // attributs
         // une liste ou un tableau d'habiletes, le type est donc la classe Habilete
 
@@ -70,22 +72,37 @@ namespace LaboFinal_A22
         public Joueur genererJoueur(string fichier, string nom)
         {
             // Déclarer une variable de type Joueur, nous allons créer l'instance plus tard
-
+            this.stat= new Joueur;
             // Initialiser la classe pour lire le fichier
+            StreamReader joueurfichier = new StreamReader(fichier);
 
             // Lire la première ligne dans le vide ( on a besoin seulement des stats)
 
             // Lire la deuxième ligne et la garder en mémoire
-
+            
+            
             // Transformer la ligne en tableau de string, en utilisant la virgule comme séparateur
-
+            List<Joueur> joueurs = joueurfichier.ReadLine(2).Split(',');
             // utiliser le tableau afin d'obtenir les informations désirées pour utiliser le constructeur de la classe Joueur
             // et finir de créer l'instance du joueur avec ces informations
-
+            Joueur type = joueurs[0];
+            Joueur att = joueurs[1];
+            Joueur matt= joueurs[2];
+            Joueur def= joueurs[3];
+            Joueur mdef = joueurs[4];
+            Joueur hp = joueurs[5];
+            Joueur habil = Habilete[joueurs[6]]
+            this.stats.Add(type);
+            this.stats.Add(att);
+            this.stats.Add(matt);
+            this.stats.Add(def);
+            this.stats.Add(mdef);
+            this.stats.Add(hp);
+            this.stats.Add(habil);
             // ne pas oublier d'assigner l'habilete au joueur selon le id après la construction
 
             // retourner le joueur configuré
-
+            return Joueur;
         }
 
         // genererEnnemi
@@ -100,20 +117,32 @@ namespace LaboFinal_A22
         public Ennemi genererEnnemi(string fichier)
         {
             // Déclarer une variable de type Ennemi, nous allons créer l'instance plus tard
-
+            this.stats =new Ennemi();
             // Initialiser la classe pour lire le fichier
-
+            StreamReader ennemiFichier = new StreamReader(fichier);
             // Lire la première ligne dans le vide ( on a besoin seulement des stats)
 
             // Lire la deuxième ligne et la garder en mémoire
 
             // Transformer la ligne en tableau de string, en utilisant la virgule comme séparateur
-
+            List<Ennemi> ennemis = ennemiFichier.ReadLine(2).Split(',');
             // utiliser le tableau afin d'obtenir les informations désirées pour utiliser le constructeur de la classe Joueur
             // et finir de créer l'instance du joueur avec ces informations
+            Ennemi type = ennemis[0];
+            Ennemi att = ennemis[1];
+            Ennemi matt= ennemis[2]
+            Ennemi def = ennemis[3];
+            Ennemi mdef = ennemis[4];
+            Ennemi hp = ennemis[5];
+            this.stats.Add(type);
+            this.stats.Add(att);
+            this.stats.Add(matt);
+            this.stats.Add(def);
+            this.stats.Add(mdef);
+            this.stats.Add(hp);
 
             // retourner le joueur configuré
-
+            return Ennemi; 
         }
     }
 }

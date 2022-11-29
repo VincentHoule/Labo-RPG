@@ -1,0 +1,5 @@
+D:\Z-AFFAIRE-VINCENT\AUTRE\ÉCOLE\Cégep\Logitiel\VS\Projet\Labo\03 Labo RPG\obj\Debug\net6.0\LaboFinal_A22.csproj.AssemblyReference.cache
+D:\Z-AFFAIRE-VINCENT\AUTRE\ÉCOLE\Cégep\Logitiel\VS\Projet\Labo\03 Labo RPG\obj\Debug\net6.0\LaboFinal_A22.GeneratedMSBuildEditorConfig.editorconfig
+D:\Z-AFFAIRE-VINCENT\AUTRE\ÉCOLE\Cégep\Logitiel\VS\Projet\Labo\03 Labo RPG\obj\Debug\net6.0\LaboFinal_A22.AssemblyInfoInputs.cache
+D:\Z-AFFAIRE-VINCENT\AUTRE\ÉCOLE\Cégep\Logitiel\VS\Projet\Labo\03 Labo RPG\obj\Debug\net6.0\LaboFinal_A22.AssemblyInfo.cs
+D:\Z-AFFAIRE-VINCENT\AUTRE\ÉCOLE\Cégep\Logitiel\VS\Projet\Labo\03 Labo RPG\obj\Debug\net6.0\LaboFinal_A22.csproj.CoreCompileInputs.cache

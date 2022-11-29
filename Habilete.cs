@@ -15,6 +15,7 @@
 using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Reflection;
 using System.Text;
 using System.Threading.Tasks;
 
@@ -28,6 +29,16 @@ namespace LaboFinal_A22
         public int recuperation;
         public int tour;
 
+        public Habilete(int id,string nom, int dmg, int delaiUtilise
+        {   
+            this.tour=0;
+            int id= this.id;
+            string nom =this.nom;
+            int dmg =this.dmg;
+            int delaiUtilise=this.recuperation;
+            
+            
+        }
         // Constructeur
         //
         // Initialise les attributs selons les paramètres reçu du même nom
@@ -37,7 +48,13 @@ namespace LaboFinal_A22
         // @param int dmg          le nombre de points de dommage de base pour l'habilete
         // @param int recuperation le nombre de tour entre chaque utilisation de l'habilete
         // @param int id           l'identificateur unique de l'habilete
+        public int executerHabilité(int matt)
+        {
+            tour=delaiUtilise;
 
+            return matt + dmg;
+
+        }
         // executer
         //
         // ajoute le delai de récupération à l'attribut tour
@@ -45,7 +62,10 @@ namespace LaboFinal_A22
         //
         // @param int matt l'attaque magique du personnage qui utilise l'habilete
         // @return le nombre de points de dommage total (attaque magique + dommage de l'habilete)
-
+        public void tourHabil()
+        {
+            tour--;
+        }
         // recuperer
         //
         // enleve 1 tour d'attente à l'attribut tour si il est plus grand que 0
