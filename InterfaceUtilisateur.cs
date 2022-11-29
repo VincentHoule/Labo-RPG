@@ -74,20 +74,20 @@ namespace LaboFinal_A22
         public void chargerCarte()
         {
             // initialiser la liste des cases de la carte
-            carte = new List<string>();
+            this.carte=new List<string>;
             // initialiser un lecteur de fichier texte pour lire le fichier carte.txt
             StreamReader lecteur = new StreamReader("carte.txt");
             // lire la première ligne de la carte. NE PAS METTRE CETTE LIGNE DANS LA LISTE
-            Console.ReadLine(carte[1]);
+            lecteur.ReadLine(1);
             // initialiser la largeur de la carte en prenant la longueur de la première ligne
-
+            largeur = lecteur[1].length;
             // les string sont des tableau, on a accès à la propriété .Lenght
 
             // au moyen d'une boucle while remplir la liste de la carte avec chacun des symboles du fichier texte
             while (!lecteur.EndOfStream)
             {
                 // lire une ligne et la placer dans une variable temporairement
-
+               
                 // pour chaque lettre de la ligne
 
                     // ajouter le caractère au tableau

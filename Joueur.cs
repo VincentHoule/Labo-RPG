@@ -21,7 +21,7 @@ namespace LaboFinal_A22
         // un nom 
         // att, matt, def, mdef, hp des entiers
         // habilete un attribut du type Habilete
-
+        
 
         // Constructeur
         //

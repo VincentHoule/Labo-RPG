@@ -23,20 +23,20 @@ namespace LaboFinal_A22
 {
     public class Habilete
     {
-        public int id;
+        
         public string nom;
         public int dmg;
         public int recuperation;
         public int tour;
+        public int id;
 
-        public Habilete(int id,string nom, int dmg, int delaiUtilise
+        public Habilete(string nom, int dmg, int recuperation,int id)
         {   
+            this.nom = nom;
+            this.dmg= dmg;
+            this.recuperation = recuperation;
+            this.id= id;
             this.tour=0;
-            int id= this.id;
-            string nom =this.nom;
-            int dmg =this.dmg;
-            int delaiUtilise=this.recuperation;
-            
             
         }
         // Constructeur
@@ -50,9 +50,9 @@ namespace LaboFinal_A22
         // @param int id           l'identificateur unique de l'habilete
         public int executerHabilité(int matt)
         {
-            tour=delaiUtilise;
+            this.tour=this.recuperation;
 
-            return matt + dmg;
+            return matt + this.dmg;
 
         }
         // executer
@@ -62,9 +62,13 @@ namespace LaboFinal_A22
         //
         // @param int matt l'attaque magique du personnage qui utilise l'habilete
         // @return le nombre de points de dommage total (attaque magique + dommage de l'habilete)
-        public void tourHabil()
+        public void recuperer()
         {
-            tour--;
+            if (this.tour < 0)
+            {
+                this.tour--;
+
+            }
         }
         // recuperer
         //
