@@ -92,8 +92,8 @@ namespace LaboFinal_A22
             int def = joueurs[3];
             int mdef = joueurs[4];
             int hp = joueurs[5];
-            stat(string nom, int att, int matt, int def, mdef, int hp);
-            
+            stat(nom, att, matt, def, mdef, hp);
+            List<string>habilete= habiletes[joueurs[6]];
             // ne pas oublier d'assigner l'habilete au joueur selon le id après la construction
             
 
@@ -124,12 +124,13 @@ namespace LaboFinal_A22
             List<string> ennemis = memoire.Split(',');
             // utiliser le tableau afin d'obtenir les informations désirées pour utiliser le constructeur de la classe Joueur
             // et finir de créer l'instance du joueur avec ces informations
-            string type = ennemis[0];
+            string nom = ennemis[0];
             int att = ennemis[1];
             int matt= ennemis[2]
             int def = ennemis[3];
             int mdef = ennemis[4];
-            
+            int hp = ennemis[5];
+            stat(nom,att,matt,def,mdef,hp);
 
             // retourner le joueur configuré
             return stat; 

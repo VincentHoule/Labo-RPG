@@ -80,24 +80,28 @@ namespace LaboFinal_A22
             // lire la première ligne de la carte. NE PAS METTRE CETTE LIGNE DANS LA LISTE
             lecteur.ReadLine(1);
             // initialiser la largeur de la carte en prenant la longueur de la première ligne
-            largeur = lecteur[1].length;
+            this.largeur = lecteur[1].length;
             // les string sont des tableau, on a accès à la propriété .Lenght
 
             // au moyen d'une boucle while remplir la liste de la carte avec chacun des symboles du fichier texte
             while (!lecteur.EndOfStream)
             {
                 // lire une ligne et la placer dans une variable temporairement
-               
+                
                 // pour chaque lettre de la ligne
-
+                for(int i = 0; i < this.largeur; i++)
+                {
+                    this.carte.Add(lecteur[i]);
+                }
                     // ajouter le caractère au tableau
 
             }
             // fermer le lecteur pour libérer le fichier 
 
             // Une fois le tableau de la carte rempli, initialiser la hauteur de la carte
+            this.hauteur=this.carte.length;
             // la hauteur est le nombre d'éléments de la liste / la largeur de la carte
-
+            
             // placer le joueur à la position de départ, la première case libre en haut à gauche
 
         }
