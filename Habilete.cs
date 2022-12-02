@@ -48,7 +48,7 @@ namespace LaboFinal_A22
         // @param int dmg          le nombre de points de dommage de base pour l'habilete
         // @param int recuperation le nombre de tour entre chaque utilisation de l'habilete
         // @param int id           l'identificateur unique de l'habilete
-        public int executerHabilité(int matt)
+        public int executer(int matt)
         {
             this.tour=this.recuperation;
 
@@ -64,7 +64,7 @@ namespace LaboFinal_A22
         // @return le nombre de points de dommage total (attaque magique + dommage de l'habilete)
         public void recuperer()
         {
-            if (this.tour < 0)
+            if (this.tour > 0)
             {
                 this.tour--;
 

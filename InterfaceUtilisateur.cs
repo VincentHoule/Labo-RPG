@@ -75,6 +75,7 @@ namespace LaboFinal_A22
         {
             // initialiser la liste des cases de la carte
             this.carte=new List<string>;
+            
             // initialiser un lecteur de fichier texte pour lire le fichier carte.txt
             StreamReader lecteur = new StreamReader("carte.txt");
             // lire la première ligne de la carte. NE PAS METTRE CETTE LIGNE DANS LA LISTE

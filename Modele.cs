@@ -70,10 +70,10 @@ namespace LaboFinal_A22
         // @param string fichier le nom de la profession choisie, il faudra ajouter .txt à la fin du string
         // @param string nom     le nom choisi par le joueur
         // @return une instance de la classe joueur
-        public Joueur genererJoueur(string fichier, string nom)
+        public Joueur genererJoueur(string fichier+".txt", string nom)
         {
             // Déclarer une variable de type Joueur, nous allons créer l'instance plus tard
-            Joueur stat = new Joueur();
+            Joueur stat;
             // Initialiser la classe pour lire le fichier
             StreamReader joueurfichier = new StreamReader(fichier);
 
@@ -92,8 +92,8 @@ namespace LaboFinal_A22
             int def = joueurs[3];
             int mdef = joueurs[4];
             int hp = joueurs[5];
-            stat(nom, att, matt, def, mdef, hp);
-            List<string>habilete= habiletes[joueurs[6]];
+            stat=new Joueur(nom, att, matt, def, mdef, hp);
+            habilete=new Habilete(habiletes[joueurs[6]]);
             // ne pas oublier d'assigner l'habilete au joueur selon le id après la construction
             
 
@@ -110,7 +110,7 @@ namespace LaboFinal_A22
         //
         // @param string fichier le nom de l'ennemi choisi, il faudra ajouter .txt à la fin du string
         // @return une instance de la classe ennemi
-        public Ennemi genererEnnemi(string fichier)
+        public Ennemi genererEnnemi(string fichier+".txt")
         {
             // Déclarer une variable de type Ennemi, nous allons créer l'instance plus tard
             Ennemi stat;
@@ -119,18 +119,18 @@ namespace LaboFinal_A22
             // Lire la première ligne dans le vide ( on a besoin seulement des stats)
             ennemiFichier.ReadLine(1);
             // Lire la deuxième ligne et la garder en mémoire
-            string memoire =ennemiFichier.ReadLine(2)
+            string memoire =ennemiFichier.ReadLine(2);
             // Transformer la ligne en tableau de string, en utilisant la virgule comme séparateur
             List<string> ennemis = memoire.Split(',');
             // utiliser le tableau afin d'obtenir les informations désirées pour utiliser le constructeur de la classe Joueur
             // et finir de créer l'instance du joueur avec ces informations
             string nom = ennemis[0];
             int att = ennemis[1];
-            int matt= ennemis[2]
+            int matt= ennemis[2];
             int def = ennemis[3];
             int mdef = ennemis[4];
             int hp = ennemis[5];
-            stat(nom,att,matt,def,mdef,hp);
+            stat=new Ennemi(nom,att,matt,def,mdef,hp);
 
             // retourner le joueur configuré
             return stat; 
