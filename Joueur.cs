@@ -20,7 +20,7 @@ namespace LaboFinal_A22
         
         // attributs (public)
         // un nom 
-        public string name;
+        public string nom;
         // att, matt, def, mdef, hp des entiers
         public int  att;
         public int matt;
@@ -28,22 +28,19 @@ namespace LaboFinal_A22
         public int mdef;
         public int   hp;
         // habilete un attribut du type Habilete
-        public string habilite;
+        Habilete habilete;
 
         // Constructeur
-        public int personnage(int att, int matt, int def, int mdef, int hp)
-             // reçoit tous les attributs en paramètre sauf l'habilete
+ 
+        // assigne les paramètres aux attributs correspondants
+        public Joueur(string nom, int att, int matt, int def, int mdef, int hp)
         {
+            this.nom = nom;
             this.att =   att;
             this.matt = matt;
             this.def =   def;
             this.mdef = mdef;
             this.hp =     hp;
-        }
-        // assigne les paramètres aux attributs correspondants
-        public Joueur(string nom, int att, int matt, int def, int mdef, int hp)
-        {
-
 
         }
 
@@ -82,7 +79,7 @@ namespace LaboFinal_A22
         {
 
             // si l'attaque est magique
-            if (bool == true)
+            if (magique == true)
             {
                 dmg = matt - mdef ;
             }
@@ -100,26 +97,28 @@ namespace LaboFinal_A22
             // si les dommages finaux sont plus grands que 0
             if (dmg < 0)
             {
-                hp -= dmg;
+                this.hp -= dmg;
             }
-            else 
+            
              // diminuer les points de vie du nombre de points de dommage final
-            return hp-dmg;
+            return this.hp-dmg;
                
 
         }
 
         // estVivant
-        public bool estVIvant(int hp)
+        public bool estVIvant()
         {
-            if (hp < 0)
+            bool statue;
+            if (this.hp < 0)
             {
-                return true;
+                statue= true;
             }
-            else if (hp >= 0)
+            else if (this.hp >= 0)
             {
-                return false;
+                statue=false;
             }
+            return statue;
         }
         // détermine s'il reste des points de vie
         // 
@@ -127,10 +126,10 @@ namespace LaboFinal_A22
 
 
         // enumererStats
-        # regionpasur public string enumererStats(string name, int hp)
+         public string enumererStats(string name, int hp)
         {
             Console.WriteLine(String name : {0}
-        }#endregion
+        }
         // envoie un string contenant le nom et les points de vie
         // "Nom : {0}, Hp : {1}"
         //
