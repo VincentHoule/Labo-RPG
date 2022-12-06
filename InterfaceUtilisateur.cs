@@ -378,20 +378,19 @@ namespace LaboFinal_A22
         {
             // initialiser une variable pour la position du joueur dans la liste this.carte
             int position = 0;
-            int compteur = 0;
 
             // tant que le compteur position est plus petit que la longueur de la liste
             // et que le contenu de la carte à la position du compteur est différente de J
-            while (this.carte.Count > compteur&& this.carte[compteur]!="j")
+            while (this.carte.Count > position && this.carte[position]!="j")
             {
                 
-                compteur++;
+                position++;
             }
 
             // augmenter le compteur position
 
             // renvoyer la position dujoueur
-            return position = compteur;
+            return position;
         }
 
         // deplacerJoueur
