@@ -21,12 +21,23 @@ namespace LaboFinal_A22
         // un nom 
         // att, matt, def, mdef, hp des entiers
         // habilete un attribut du type Habilete
+        public string nom;
+        public int att;
+        public int matt;
+        public int def;
+        public int mdef;
+        public int hp;
+        public Habilete habilete;
 
         // Constructeur
         //
         // reçoit tous les attributs en paramètre sauf l'habilete
         // assigne les paramètres aux attributs correspondants
+        public Joueur(string nom, int att, int matt, int def, int mdef, int hp)
+        {
 
+
+        }
 
         // enumererActions
         //
