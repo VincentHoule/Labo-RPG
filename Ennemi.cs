@@ -16,6 +16,7 @@
 using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Reflection.PortableExecutable;
 using System.Text;
 using System.Threading.Tasks;
 
@@ -25,54 +26,114 @@ namespace LaboFinal_A22
     {
         // attributs (public)
         // un nom 
-        // att, matt, def, mdef, hp des entiers
-        // magique un attribut qui détermine si les attaques sont magiques ou non
+        public string nom;
+        // att,
+        public int att;
+        // matt,
+        public int matt;
+        // def,
+        public int def;
+        // mdef,
+        public int mdef;
+        // hp des entiers
+        public int hp;
 
+        // magique un attribut qui détermine si les attaques sont magiques ou non
+        public bool magique;
         // Constructeur
-        //
         // reçoit tous les attributs en paramètre
+        public Ennemi(string nom, int att, int matt, int def, int mdef, int hp, bool magique)
+        // assigne les paramètres aux attributs correspondants
+        {
+            this.nom = nom;
+            this.att = att;
+            this.matt = matt;
+            this.def = def;
+            this.mdef = mdef;
+            this.hp = hp;
+            this.magique = magique;
+        }
         // assigne les paramètres aux attributs correspondants
 
         // estMagique
-        //
-        // retourne l'attribut magique 
-        //
-        // @return bool vrai si les attaques sont magiques, faux sinon
+        public bool estMagique()
+        {
+            return this.magique;
 
+            if (this.magique == true)
+            {
+                return true;
+            }
+            else
+            {
+                return false;
+            }
+        }
+        // retourne l'attribut magique 
+
+        // @return bool vrai si les attaques sont magiques, faux sinon
+        public int attaquer()
+        {
+            return this.att;
+        }
         // attaquer
         //
         // renvoie la statistique d'attaque
 
         // defendre
-        //
+        public int defendre(bool magique, int dmg)
+        {
+            if (magique == true)
+            {
+                dmg -= this.mdef;
+            }
+            else
+            {
+                dmg -= this.def;
+            }
+
+            return this.hp -= dmg;
+
+         
+        }
         // selon l'attaque, magique ou non, diminue les points de dommage du nombre de points de défense
         // diminiue les points de vie selon les dommages finaux, les dommages finaux ne peuvent pas être sous 0
         //
         // @param bool magique vrai pour une attaque magique, faux sinon
         // @param int dmg      le nombre de point de dommage avant la réduction par la défense
-        public void defendre(bool magique, int dmg)
-        {
-            // si l'attaque est magique
+        // si l'attaque est magique
 
-                // les dommages finaux sont le dommage - la défense magique
+        // les dommages finaux sont le dommage - la défense magique
 
-            // sinon
+        // sinon
 
-                // les dommages finaux sont le dommage - la défense
+        // les dommages finaux sont le dommage - la défense
+
+        // diminuer les points de vie du nombre de points de dommage final
 
 
-                // diminuer les points de vie du nombre de points de dommage final
-
-        }
 
         // estVivant
-        //
+        public bool estVivant()
+        {
+            if (this.hp < 0)
+            {
+                return false;
+            }
+            else
+            {
+                return true;
+            }
+        }
         // détermine s'il reste des points de vie
         // 
         // @return bool vrai s'il reste des points de vie, faux sinon
 
         // enumererStats
-        // 
+        public string enumererStats()
+        {
+            return "Nom : " + this.nom + "Hp : " + this.hp;
+        }
         // envoie un string contenant le nom et les points de vie
         // "Nom : {0}, Hp : {1}"
         //

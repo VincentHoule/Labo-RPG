@@ -1,4 +1,5 @@
-﻿// Classe Modele
+﻿
+// Classe Modele
 //
 // Usine qui génère des joueurs et des ennemis à partir des fichiers texte
 //
@@ -148,13 +149,18 @@ namespace LaboFinal_A22
             int def = 0;
             int mdef = 0;
             int hp = 0;
-
+            bool magique = false;
+            if (ennemis[6] == "magique")
+            {
+                magique = true;
+            }
             int.TryParse(ennemis[1],out att);
             int.TryParse(ennemis[2],out matt);
             int.TryParse(ennemis[3],out def);
             int.TryParse(ennemis[4],out mdef);
             int.TryParse(ennemis[5],out hp);
-            stat=new Ennemi (nom,att,matt,def,mdef,hp);
+            
+            stat=new Ennemi (nom,att,matt,def,mdef,hp,magique);
 
             // retourner le joueur configuré
             return stat; 

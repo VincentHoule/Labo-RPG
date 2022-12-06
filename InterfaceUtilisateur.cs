@@ -74,7 +74,7 @@ namespace LaboFinal_A22
         public void chargerCarte()
         {
             // initialiser la liste des cases de la carte
-            List<string> cases = this.carte;
+            this.carte= new List<string>();
             
             // initialiser un lecteur de fichier texte pour lire le fichier carte.txt
             StreamReader lecteur = new StreamReader("carte.txt");
@@ -102,11 +102,11 @@ namespace LaboFinal_A22
 
             }
             // fermer le lecteur pour libérer le fichier 
-
+            lecteur.Close();
             // Une fois le tableau de la carte rempli, initialiser la hauteur de la carte
-            this.hauteur=this.carte.Count;
+            this.hauteur=this.carte.Count/this.largeur;
             // la hauteur est le nombre d'éléments de la liste / la largeur de la 
-            
+            this.carte[24] = "J";
             // placer le joueur à la position de départ, la première case libre en haut à gauche
 
         }
@@ -155,7 +155,12 @@ namespace LaboFinal_A22
                 for (int j=0; j<this.largeur; j++)
                 {
                     // afficher sur la même ligne de console
-                    Console.Write(j+(i*this.largeur));
+              
+                    
+                    
+                        Console.Write(this.carte[j + (i * this.largeur)]);
+
+                    
                     // le symbole de la liste à la position : j + (i * largeur)
                 }
                 // sauter une ligne
@@ -308,13 +313,13 @@ namespace LaboFinal_A22
             for(int i=0; i < actions.Length; i++)
             {
                 // afficher i + 1 suivi du nom de l'action
-                Console.WriteLine(i + 1 + actions[i]);
+                Console.WriteLine((i + 1)+". " + actions[i]);
             }
 
             // lire la réponse de l'utilisateur
             int.TryParse(Console.ReadLine(), out choix);
             // retourne la position de l'action dans le tableau reçu en paramètre
-            return choix;
+            return choix-1;
         }
 
         // afficherMenuCible
@@ -334,13 +339,13 @@ namespace LaboFinal_A22
             }
             int.TryParse(Console.ReadLine(), out choix);
 
-            return choix - 1;
+            return choix-1;
         }
 
         // afficherMenuIntro
         //
         // affiche l'intro et le menu du début, ensuite retourne le choix de l'utilisateur : 1 pour jouer, 2 pour quitter
-        public int affichierMenuIntro()
+        public int afficherMenuIntro()
         {
             // varriable du choix de l'utilisateur
             int choix = 0;
@@ -354,7 +359,7 @@ namespace LaboFinal_A22
         // afficherMenuFin
         //
         // affiche le menu de fin et retourne le choix de l'utilisateur : 1 pour rejouer, 2 pour quitter
-        public int affichierMenuFin()
+        public int afficherMenuFin()
         {
             // varriable du choix de l'utilisateur
             int choix = 0;
@@ -381,7 +386,7 @@ namespace LaboFinal_A22
 
             // tant que le compteur position est plus petit que la longueur de la liste
             // et que le contenu de la carte à la position du compteur est différente de J
-            while (this.carte.Count > position && this.carte[position]!="j")
+            while (this.carte.Count > position && this.carte[position]!="J")
             {
                 
                 position++;
@@ -405,44 +410,79 @@ namespace LaboFinal_A22
         public bool deplacerJoueur(int direction)
         {
             // initialiser une variable pour dire si le joueur est arrivé à la sortie
-
+            bool arriverSortie=false;
             // initialiser une variable (compteur) pour le numéro de la case où le joueur est placé
+            int position = demanderPosition();
 
             // initialiser une variable pour le numéro de la case de destination
-
+            int destination =0;
             // trouver la case dans laquelle le joueur est avec la méthode demanderPosition()
-
             // selon la direction
-            // si le joueur va vers le haut
 
+            // si le joueur va vers le haut
+            if (direction == 0)
+            {
+                destination -= this.largeur;
+            }
                 // la case de destination est la case du joueur - la largeur de la carte
 
             // vers le bas
+            else if (direction == 1)
+            {
+                destination += this.largeur;
+            }
 
                 // la case de destination est la case du joueur + la largeur de la carte
 
             // vers la gauche
-
+            else if(direction == 2)
+            {
+                destination -= 1;
+            }
                 // la case de destination est la case du joueur - 1
 
             // vers la droite
-
-                // la case de destination est la case du joueur + 1
-
+            else if(direction == 3)
+            {
+                destination += 1;
+            }
+            // la case de destination est la case du joueur + 1
+            destination += position;
             // si la position de destination est dans la carte
             // >= 0 et < le nombre d'éléments de la carte
-
+            if (direction >=0 && direction< this.carte.Count)
+            {
                 // si le contenu de la carte à la position de destination est la sortie (un S)
 
+                if (this.carte[destination] == "S")
+                {
                     // changer la valeur de la variable de retour à true
 
+                    arriverSortie = true;
+                }
                 // si le contenu de la carte à la position de destination est différente de # (un mur)
 
+               if (this.carte[destination] != "#")
+                {
+                    
                     // remplacer le joueur (la lettre J) de sa position dans la carte par un vide: " "
 
+                    this.carte[position] = " ";
                     // placer le joueur (le symbole J) dans la carte, à la destination
 
+                    this.carte[destination] = "J";
+                }
+
+                
+            }
             // retourner la variable de retour, qui détermine si on a atteint la sortie ou non
+
+            return arriverSortie;
+               
+
+
+
+
 
         }
     }
