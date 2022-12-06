@@ -1,5 +1,0 @@
-C:\Users\mal_f\OneDrive\Documents\-INFO\Prog1\Laborpg\Labo-RPG\obj\Debug\net6.0\LaboFinal_A22.csproj.AssemblyReference.cache
-C:\Users\mal_f\OneDrive\Documents\-INFO\Prog1\Laborpg\Labo-RPG\obj\Debug\net6.0\LaboFinal_A22.GeneratedMSBuildEditorConfig.editorconfig
-C:\Users\mal_f\OneDrive\Documents\-INFO\Prog1\Laborpg\Labo-RPG\obj\Debug\net6.0\LaboFinal_A22.AssemblyInfoInputs.cache
-C:\Users\mal_f\OneDrive\Documents\-INFO\Prog1\Laborpg\Labo-RPG\obj\Debug\net6.0\LaboFinal_A22.AssemblyInfo.cs
-C:\Users\mal_f\OneDrive\Documents\-INFO\Prog1\Laborpg\Labo-RPG\obj\Debug\net6.0\LaboFinal_A22.csproj.CoreCompileInputs.cache

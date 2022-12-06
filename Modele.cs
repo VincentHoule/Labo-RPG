@@ -1,4 +1,5 @@
-﻿// Classe Modele
+﻿
+// Classe Modele
 //
 // Usine qui génère des joueurs et des ennemis à partir des fichiers texte
 //

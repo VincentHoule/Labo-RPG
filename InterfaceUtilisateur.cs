@@ -294,36 +294,66 @@ namespace LaboFinal_A22
         public bool deplacerJoueur(int direction)
         {
             // initialiser une variable pour dire si le joueur est arrivé à la sortie
-
+            bool arriverSortie;
             // initialiser une variable (compteur) pour le numéro de la case où le joueur est placé
-
+            int compteur;
             // initialiser une variable pour le numéro de la case de destination
-
+            string destination;
             // trouver la case dans laquelle le joueur est avec la méthode demanderPosition()
-
+            int position = demanderPosition();
             // selon la direction
+            string[] = new string[506]
             // si le joueur va vers le haut
-
+            if (direction == 0)
+            {
+                position -= this.largeur;
+            }
                 // la case de destination est la case du joueur - la largeur de la carte
 
             // vers le bas
+            else if (direction == 1)
+            {
+                position += this.largeur;
+            }
 
                 // la case de destination est la case du joueur + la largeur de la carte
 
             // vers la gauche
-
+            else if(direction == 2)
+            {
+                position -= 1;
+            }
                 // la case de destination est la case du joueur - 1
 
             // vers la droite
+            else if(direction == 3)
+            {
+                position += 1;
+            }
 
                 // la case de destination est la case du joueur + 1
 
             // si la position de destination est dans la carte
             // >= 0 et < le nombre d'éléments de la carte
-
-                // si le contenu de la carte à la position de destination est la sortie (un S)
-
+            if (direction >= $$ < 506)
+            {
+                if(destination == "s")
+                {
+                    return true;
+                }
+            // si le contenu de la carte à la position de destination est la sortie (un S)
+                
                     // changer la valeur de la variable de retour à true
+                if(destination != "#")
+                {
+                    position = " ";
+                    destination = "J";
+                }
+
+                return arriverSortie;
+            }
+
+               
 
                 // si le contenu de la carte à la position de destination est différente de # (un mur)
 

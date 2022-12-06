@@ -28,19 +28,21 @@ namespace LaboFinal_A22
         public int mdef;
         public int   hp;
         // habilete un attribut du type Habilete
-        public string habilite;
+        public Habilete habilete;
 
         // Constructeur
-        public int personnage(int att, int matt, int def, int mdef, int hp)
-             // reçoit tous les attributs en paramètre sauf l'habilete
+        public Joueur (string name,int att, int matt, int def, int mdef, int hp)
+        // reçoit tous les attributs en paramètre sauf l'habilete
+        // assigne les paramètres aux attributs correspondants
         {
+            this.name = name;
             this.att =   att;
             this.matt = matt;
             this.def =   def;
             this.mdef = mdef;
             this.hp =     hp;
         }
-        // assigne les paramètres aux attributs correspondants
+        
 
 
         // enumererActions
@@ -63,7 +65,10 @@ namespace LaboFinal_A22
         }
 
         // attaquer
-        //
+        public int attaquer()
+        {
+            return this.att;
+        }
         // renvoie la statistique d'attaque
 
 
@@ -74,45 +79,39 @@ namespace LaboFinal_A22
         //
         // @param bool magique vrai pour une attaque magique, faux sinon
         // @param int dmg      le nombre de point de dommage avant la réduction par la défense
-        public int defendre(bool magique, int dmg, int matt,int mdef, int att,int def)
+        public int defendre(bool magique, int dmg)
         {
-
             // si l'attaque est magique
             if (bool == true)
             {
-                dmg = matt - mdef ;
+                dmg -= this.mdef;
             }
             // les dommages finaux sont le dommage - la défense magique
-
             // sinon
             else 
             {
-                dmg = att - def;
+                dmg -= this.def;
 
             }
-
-                // les dommages finaux sont le dommage - la défense
-
+            // les dommages finaux sont le dommage - la défense
             // si les dommages finaux sont plus grands que 0
             if (dmg < 0)
             {
-                hp -= dmg;
+                this.hp -= dmg;
             }
             else 
              // diminuer les points de vie du nombre de points de dommage final
-            return hp-dmg;
-               
-
+            return this.hp-dmg;
         }
 
         // estVivant
-        public bool estVIvant(int hp)
+        public bool estVivant(int hp)
         {
-            if (hp < 0)
+            if (this.hp < 0)
             {
                 return true;
             }
-            else if (hp >= 0)
+            else
             {
                 return false;
             }
@@ -123,10 +122,12 @@ namespace LaboFinal_A22
 
 
         // enumererStats
-        # regionpasur public string enumererStats(string name, int hp)
+        public string enumererStats(string name, int hp)
         {
-            Console.WriteLine(String name : {0}
-        }#endregion
+            return "Nom : " + name + "Hp : " + hp; 
+           
+        }
+
         // envoie un string contenant le nom et les points de vie
         // "Nom : {0}, Hp : {1}"
         //
