@@ -17,21 +17,29 @@ namespace LaboFinal_A22
 {
     public class Joueur
     {
+        
         // attributs (public)
         // un nom 
+        public string name;
         // att, matt, def, mdef, hp des entiers
-        // habilete un attribut du type Habilete
-        public string nom;
-        public int att;
+        public int  att;
         public int matt;
-        public int def;
+        public int  def;
         public int mdef;
-        public int hp;
-        public Habilete habilete;
+        public int   hp;
+        // habilete un attribut du type Habilete
+        public string habilite;
 
         // Constructeur
-        //
-        // reçoit tous les attributs en paramètre sauf l'habilete
+        public int personnage(int att, int matt, int def, int mdef, int hp)
+             // reçoit tous les attributs en paramètre sauf l'habilete
+        {
+            this.att =   att;
+            this.matt = matt;
+            this.def =   def;
+            this.mdef = mdef;
+            this.hp =     hp;
+        }
         // assigne les paramètres aux attributs correspondants
         public Joueur(string nom, int att, int matt, int def, int mdef, int hp)
         {
@@ -70,32 +78,59 @@ namespace LaboFinal_A22
         //
         // @param bool magique vrai pour une attaque magique, faux sinon
         // @param int dmg      le nombre de point de dommage avant la réduction par la défense
-        public void defendre(bool magique, int dmg)
+        public int defendre(bool magique, int dmg, int matt,int mdef, int att,int def)
         {
 
             // si l'attaque est magique
-
-                // les dommages finaux sont le dommage - la défense magique
+            if (bool == true)
+            {
+                dmg = matt - mdef ;
+            }
+            // les dommages finaux sont le dommage - la défense magique
 
             // sinon
+            else 
+            {
+                dmg = att - def;
+
+            }
 
                 // les dommages finaux sont le dommage - la défense
 
             // si les dommages finaux sont plus grands que 0
-
-                // diminuer les points de vie du nombre de points de dommage final
+            if (dmg < 0)
+            {
+                hp -= dmg;
+            }
+            else 
+             // diminuer les points de vie du nombre de points de dommage final
+            return hp-dmg;
+               
 
         }
 
         // estVivant
-        //
+        public bool estVIvant(int hp)
+        {
+            if (hp < 0)
+            {
+                return true;
+            }
+            else if (hp >= 0)
+            {
+                return false;
+            }
+        }
         // détermine s'il reste des points de vie
         // 
         // @return bool vrai s'il reste des points de vie, faux sinon
 
 
         // enumererStats
-        // 
+        # regionpasur public string enumererStats(string name, int hp)
+        {
+            Console.WriteLine(String name : {0}
+        }#endregion
         // envoie un string contenant le nom et les points de vie
         // "Nom : {0}, Hp : {1}"
         //
