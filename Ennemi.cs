@@ -58,7 +58,7 @@ namespace LaboFinal_A22
         // estMagique
         public bool estMagique()
         {
-            return this.magique;
+
 
             if (this.magique == true)
             {

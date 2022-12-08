@@ -95,7 +95,7 @@ namespace LaboFinal_A22
             }
             // les dommages finaux sont le dommage - la défense
             // si les dommages finaux sont plus grands que 0
-            if (dmg < 0)
+            if (dmg > 0)
             {
                 this.hp -= dmg;
             }
